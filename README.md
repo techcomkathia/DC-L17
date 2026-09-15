@@ -4,7 +4,7 @@
 # Desenvolvimento Full Stack JavaScript  
 **Turma Live 17 - Digital College**
 
-Bem-vindo(a) ao repositório oficial da turma **Live 14** da **Digital College** do curso **Desenvolvimento Full Stack JavaScript** ! Este repositório contém materiais, exercícios e projetos relacionados aos módulos abordados ao longo do curso.
+Bem-vindo(a) ao repositório oficial da turma **Live 17** da **Digital College** do curso **Desenvolvimento Full Stack JavaScript** ! Este repositório contém materiais, exercícios e projetos relacionados aos módulos abordados ao longo do curso.
 
 ## 📚 Estrutura do Curso
 
