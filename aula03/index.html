@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Aula 03</h1>
+
+    <h2>Tabelas</h2>
+
+    <p> Tag table, tr, td, th e as propriedades colspan e rowspan</p>
+
+    <h3>Tabela simples</h3>
+
+    <table>
+
+        <tr>
+            <th>coluna 1</th>
+            <th>coluna 2</th>
+            <th>coluna 3</th>
+        </tr>
+
+        <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+
+        <tr>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+        </tr>
+    </table>
+
+    <h3>Tabela complexa (Com "mesclagens")</h3>
+
+    <h4>Expansão no sentido da linha / horizontal</h4>
+     <table>
+
+        <tr>            
+            <th colspan="3">coluna 1</th>           
+        </tr>
+
+        <tr>
+            <th>coluna 1</th>
+            <th>coluna 2</th>
+            <th>coluna 3</th>
+        </tr>
+
+        <tr>
+            <td>4</td>
+            <td colspan="2">5/6</td>
+            
+        </tr>
+
+        <tr>
+            <td colspan="2">7/8</td>
+            <td>9</td>
+        </tr>
+    </table>
+    
+</body>
+</html>
