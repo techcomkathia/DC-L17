@@ -47,7 +47,7 @@
     <h3>Tabela complexa (Com "mesclagens")</h3>
 
     <h4>Expansão no sentido da linha / horizontal</h4>
-     <table>
+    <table>
 
         <tr>            
             <th colspan="3">coluna 1</th>           
@@ -70,6 +70,50 @@
             <td>9</td>
         </tr>
     </table>
+
+    <h4>Expansão no sentido da coluna / vertical</h4>
+    <table>
+
+    <table>
+        <tr>
+            <th rowspan="2">Titulo Geral</th>
+            <th>Titulo 1</th>
+            <th>Titulo 2</th>
+        </tr>
+
+        <tr>
+            <td>Subtitulo 1</td>
+            <td>Subtitulo 2</td>
+        </tr>
+
+        <tr>
+            <td>Dado 1</td>
+            <td>Dado 2</td>
+            <td>Dado 3</td>
+        </tr>
+
+
+
+    </table>
+
+    <h2>Formulários</h2>
+
+    <form>
+        <label for="unico">Exemplo</label>
+        <input type="text" id="unico" value="valor inicial" placeholder="digite algo aqui">
+        <br>
+        <label for="numero">numero</label>
+        <input type="number" id="numero" placeholder="digite um número aqui">
+        
+    </form>
+    <!-- placeholder é uma dica de preenchimento. Não interfere no valor -->
+     <!-- value é de fato o valor do campo de imput -->
+
+
+
+
+
+    
     
 </body>
 </html>
