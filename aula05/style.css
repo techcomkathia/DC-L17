@@ -1,0 +1,62 @@
+/* exemplo sobre prevalência das propriedades / estilização de css */
+
+/* body{
+    background-color: black;
+    color: white;
+}
+
+main{
+    background-color: rgb(172, 116, 116);
+    color: rgb(53, 1, 1);
+}
+
+footer{
+    color:yellow;
+}
+
+p{
+    color: rgb(17, 151, 2);
+} */
+
+/* EXEMPLOS PARA TIPOGRAFIA */
+
+/* Tamanho da fonte, cor e estilo da fonte */
+
+h1{
+    font-size: 30px;
+    /* pixel não é responsiva */
+    /* em, vh,vw e % são medidas responsivas */
+    color: skyblue;
+    /* cores nomeadas, cores RGB e cores hexadecimais */
+    font-style: italic;
+    font-weight: 100;
+    
+}
+
+/* alinhamentos */
+
+h2{
+    text-align:center;
+}
+
+p{
+    text-align: justify;
+}
+
+h4{
+    text-align: right; 
+    /* end/ right */
+    /* left/ start */
+}
+
+/* CORES NO CSS */
+/* cor de plano de fundo */
+
+body{
+    background-color: #abe7dd;
+}
+
+main{
+    background-color:rgba(1, 10, 44, 0.99);
+    color: #fff;
+}
