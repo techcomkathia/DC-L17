@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: black;
+    color: white;
+}
+
+div{
+    border: 5px solid rgb(0, 255, 217);
+}
+
+.classe1{
+    background-color: rgb(4, 2, 126);
+    margin: 20px;
+    padding: 20px;
+
+}
+
+.classe2{
+    background-color: rgb(91, 1, 79);
+     /* topo e base com 20px e laterais com 10px*/
+    margin: 20px 10px;
+    padding: 20px 10px;
+}
+
+.classe3{
+    background-color: rgb(101, 2, 2);
+    /* lateral esquerda: 10, direita: 15 top: 5 e base:20 */
+    margin: 5px 15px 20px 10px;
+    padding: 5px 15px 20px 10px;
+}
+
+h1,p, img{
+    border: 1px solid #ffff;
+}
+
+h1{
+    padding: 15px 0px;
+}
+
+img{
+    display: block;
+    width: 200px;
+    margin: 10px;
+}
+
+.tamanho{
+    /* background-color: aqua; */
+    width:400px;
+    /* height: 100px; */
+}
+
+a{
+    /* width:800px;
+    height: 50px; */
+    background-color: #fff;
+    display: block;
+    margin:10px
+}
+
+.esquerda{
+    background-color: #ffffff;
+    color:black ;
+    height: 200px;
+    width: 400px;
+    display: inline-block;
+
+}
+
+.direita{
+    background-color: #ffffff;
+    color:black ;
+    height: 300px;
+    width: 400px;
+    display: inline-block;
+}
+
+.apagar{
+    display: none;
+}
+
+.bordaRedonda{
+    border-radius: 50%;
+}
