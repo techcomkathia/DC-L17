@@ -4,3 +4,21 @@ para os blocos de informação de modo de preparo e lista de ingredientes, adici
 esses dois blocos precisam ser posicionados lado a lado, utilize uma largura de 500px
 
 */
+
+.listas{
+    border-radius: 20px;
+    border: 2px solid #404040;
+    padding: 20px;
+    margin: 15px ;
+    display: inline-block;
+    width: 500px;
+    height: 400px;
+    /* alinhamento vertical */
+    vertical-align: bottom;
+}
+
+.container{
+    width: 1200px;
+    margin: 0 auto;
+    /* border: 2px solid red; */
+}
