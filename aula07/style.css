@@ -9,7 +9,70 @@
     /* padrão de nomeclatura esperado é --nome-variavel */
     --cor-fontes: #fff;
     --cor-fundo: #000;
-    --cor-botoes: #e7a0e6;
+    --cor-botoes: #df00db;
     --cor-destaque: #5b0359;
-    --cor-card: #dedbde;
+    --cor-card: #ffffff;
 }
+
+/* atividade 1 */
+/* faça a aplicação da cor de fundo para toda a página, a definição da cor do card de classe link-biodo arredondamento de borda da imagem (50%)principal e do card de classe link-bio (20px) */
+
+/* h1{
+     exemplo de utilização das variáveis de css
+    color: var(--cor-destaque);
+} */
+ 
+body{
+    background-color: var(--cor-fundo);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.link-bio{
+    background-color: var(--cor-card);
+    border-radius: 20px;
+    width:350px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.link-bio img{
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+}
+
+.link-bio a{
+    width: 90%;
+    background-color: var(--cor-botoes);
+    border-radius: 40px;
+    text-align: center;
+    color: var(--cor-fontes);
+    padding: 20px;
+    margin: 10px;
+    text-decoration: none;
+}
+
+.link-bio h1{
+    color: var(--cor-botoes);
+    margin:10px;
+}
+
+p{
+    text-align: center;
+}
+
+/* Atividade 2 */
+/* Utilizando os conceitos de display flex alinhe o card link-bio no centro da tela principal . Todo o conteúdo interno ao card link-bio deve estar alinhado ao centro e em formato de coluna */
+/* display, flex-direction, justify-content e align-items*/
+
+
+/* Atividade 3.
+aplique as cores as ancoras do link-bio. Elas terão como medida de largura 90% (isso indica 90% da largura do card link-bio), o alinhamento de texto será centralizado e a cor do texto será a variável cor-fontes. Faça as demais estilizações necessárias para os textos  */
