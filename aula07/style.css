@@ -1,0 +1,15 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+
+/* definição das variáveis de css para toda a aplicação */
+:root{
+    /* padrão de nomeclatura esperado é --nome-variavel */
+    --cor-fontes: #fff;
+    --cor-fundo: #000;
+    --cor-botoes: #e7a0e6;
+    --cor-destaque: #5b0359;
+    --cor-card: #dedbde;
+}
