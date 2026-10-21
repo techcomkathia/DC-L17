@@ -10,7 +10,7 @@
 
   <!-- 1. Topo -->
   <header class=" bg-dark text-light py-5 text-center">
-    <img src="https://picsum.photos/id/64/240/240" alt="Foto de Ana Souza">
+    <img src="https://picsum.photos/id/64/240/240" alt="Foto de Ana Souza" class="border rounded-circle">
     <h1 class="display-1 fw-bold">Ana Souza</h1>
     <p class="my-1">Desenvolvedora front-end em formação. Gosto de transformar ideias em páginas que funcionam no celular.</p>
   </header>
@@ -24,8 +24,8 @@
         <h2 class="text-center m-5">O que eu sei fazer</h2>
 
         <div class="row ">
-            <div class="col-12 col-md-4 ">
-                <div class="border rounded shadow-sm p-4">
+            <div class="col-12 col-md-4  ">
+                <div class="border rounded shadow-sm p-4 h-100">
                     <h3 >HTML</h3>
                     <p>Estrutura de páginas com tags semânticas e acessíveis.</p>
                 </div>
@@ -33,7 +33,7 @@
             
             
             <div class="col-12 col-md-4 ">
-                <div class="border rounded shadow-sm p-4">
+                <div class="border rounded shadow-sm p-4 h-100">
                     <h3>CSS</h3>
                     <p>Cores, tipografia, flexbox e layouts responsivos.</p>
                 </div>
@@ -41,7 +41,7 @@
             
             
             <div class="col-12 col-md-4 ">
-                <div class="border rounded shadow-sm p-4">
+                <div class="border rounded shadow-sm p-4 h-100">
                     <h3>Bootstrap</h3>
                     <p>Grid, utilitários e componentes prontos para ganhar tempo.</p>
                 </div>
@@ -53,31 +53,33 @@
     <!-- 4. Sobre mim -->
     <section class="bg-body-tertiary py-5 ">
       <div class="container">
-        <div>
-          <img src="https://picsum.photos/id/0/800/500" alt="Notebook em uma mesa de trabalho">
+        <div class=" row align-items-center">
+        <div class="col-lg-6 col-sm-12">
+          <img src="https://picsum.photos/id/0/800/500" alt="Notebook em uma mesa de trabalho" class=" border rounded img-fluid" >
         </div>
-        <div>
+        <div class=" col-lg-6 col-sm-12">
           <h2>Sobre mim</h2>
           <p>Comecei a programar em 2026 e estou no curso full stack. Antes trabalhava com atendimento,
             por isso gosto de pensar em quem vai usar a página.</p>
           <p>Nas horas livres gosto de café, música e de cuidar das minhas plantas.</p>
         </div>
       </div>
+      </div>
     </section>
 
     <!-- 5. Contato -->
-    <section class="container">
+    <section class="container py-5 text-center">
       <h2>Vamos conversar?</h2>
       <div>
-        <a href="mailto:ana@email.com">Mandar e-mail</a>
-        <a href="https://github.com">Ver GitHub</a>
+        <a href="mailto:ana@email.com" class="btn btn-primary btn-lg ">Mandar e-mail</a>
+        <a href="https://github.com" class="btn btn-primary btn-lg ">Ver GitHub</a>
       </div>
     </section>
 
   </main>
 
   <!-- 6. Rodapé -->
-  <footer>
+  <footer class="bg-body-tertiary py-5 text-center">
     <span>© 2026 Ana Souza</span>
     <span>Feito com Bootstrap 5</span>
   </footer>
