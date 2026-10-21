@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aula 1 · Fundamentos do Bootstrap 5</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="../recursos/aulas.css" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg bg-dark sticky-top" data-bs-theme="dark">
+    <div class="container">
+      <a class="navbar-brand" href="homeAula.html"><i class="bi bi-bootstrap-fill"></i> Aula 1</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-aula">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu-aula">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#instalacao">Instalação</a></li>
+          <li class="nav-item"><a class="nav-link" href="#container">Container</a></li>
+          <li class="nav-item"><a class="nav-link" href="#grid">Grid</a></li>
+          <li class="nav-item"><a class="nav-link" href="#espacamento">Espaçamento</a></li>
+          <li class="nav-item"><a class="nav-link" href="#cores">Cores</a></li>
+          <li class="nav-item"><a class="nav-link" href="#tipografia">Texto</a></li>
+          <li class="nav-item"><a class="nav-link" href="#flex">Flex</a></li>
+          <li class="nav-item"><a class="nav-link" href="#bordas">Bordas</a></li>
+          <li class="nav-item"><a class="nav-link" href="#botoes">Botões</a></li>
+          <li class="nav-item"><a class="nav-link" href="#imagens">Imagens</a></li>
+          <li class="nav-item"><a class="nav-link" href="aula02.html">Aula 2 <i class="bi bi-arrow-right"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="bg-primary text-white py-5">
+    <div class="container">
+      <p class="text-uppercase fw-semibold mb-1">Bootstrap 5 · Aula 1</p>
+      <h1 class="display-5 fw-bold">Fundamentos e classes utilitárias</h1>
+      <p class="lead mb-0">Como o Bootstrap funciona, como montar layouts com o grid e como estilizar
+        qualquer elemento só com classes, sem escrever CSS.</p>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- ============================================================ -->
+    <section class="secao" id="o-que-e">
+      <h2><span class="numero">0</span>O que é o Bootstrap?</h2>
+      <p>O Bootstrap é uma <strong>biblioteca de CSS</strong> (com um pouco de JavaScript). Alguém já escreveu
+        milhares de regras de CSS e deu um nome para cada uma: são as <strong>classes</strong>.
+        Em vez de escrever o CSS, a gente só coloca o nome da classe no HTML.</p>
+      <div class="row g-3">
+        <div class="col-md-6">
+          <p class="fw-semibold mb-1">Sem Bootstrap (CSS escrito por nós)</p>
+          <pre class="codigo-fixo"><code>&lt;style&gt;
+  .aviso {
+    background: #d1e7dd;
+    color: #0f5132;
+    padding: 16px;
+    border-radius: 6px;
+  }
+&lt;/style&gt;
+&lt;div class="aviso"&gt;Salvo!&lt;/div&gt;</code></pre>
+        </div>
+        <div class="col-md-6">
+          <p class="fw-semibold mb-1">Com Bootstrap (só classes)</p>
+          <pre class="codigo-fixo"><code>&lt;div class="alert alert-success"&gt;
+  Salvo!
+&lt;/div&gt;</code></pre>
+        </div>
+      </div>
+      <div class="dica">
+        <i class="bi bi-lightbulb"></i> <strong>Ideia principal da aula:</strong> cada classe faz uma coisa pequena
+        (<code>p-3</code> = espaço interno, <code>text-center</code> = centraliza o texto…). A gente combina várias
+        classes no mesmo elemento para chegar no visual que quer.
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <section class="secao" id="instalacao">
+      <h2><span class="numero">1</span>Como colocar o Bootstrap na página</h2>
+      <p>O jeito mais simples é pelo <strong>CDN</strong>: um link para os arquivos do Bootstrap que já estão
+        na internet. São duas linhas:</p>
+      <ul>
+        <li>o <strong>CSS</strong> vai no <code>&lt;head&gt;</code>;</li>
+        <li>o <strong>JavaScript</strong> vai no fim do <code>&lt;body&gt;</code> (é ele que faz menus abrirem,
+          modais aparecerem etc. Veremos na Aula 2).</li>
+      </ul>
+      <pre class="codigo-fixo"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Minha página&lt;/title&gt;
+
+  &lt;!-- 1. CSS do Bootstrap --&gt;
+  &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;h1 class="text-primary"&gt;Olá, Bootstrap!&lt;/h1&gt;
+
+  &lt;!-- 2. JavaScript do Bootstrap (sempre no final do body) --&gt;
+  &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      <div class="dica">
+        <i class="bi bi-exclamation-triangle"></i> Não esqueça da tag <code>&lt;meta name="viewport"&gt;</code>.
+        Sem ela, o celular não entende o layout responsivo e a página aparece "miniatura".
+      </div>
+      <p>Se quiser escrever o seu próprio CSS também, coloque o seu arquivo <strong>depois</strong> do Bootstrap,
+        assim as suas regras ganham quando houver conflito.</p>
+    </section>
+
+    <!-- ============================================================ -->
+    <section class="secao" id="container">
+      <h2><span class="numero">2</span>Container</h2>
+      <p>O <code>.container</code> é a "caixa" que centraliza o conteúdo e dá uma margem nas laterais.
+        Quase toda página começa com ele.</p>
+      <table class="table table-sm w-auto">
+        <thead><tr><th>Classe</th><th>Comportamento</th></tr></thead>
+        <tbody>
+          <tr><td><code>.container</code></td><td>largura máxima que muda conforme a tela, centralizado</td></tr>
+          <tr><td><code>.container-fluid</code></td><td>sempre 100% da largura</td></tr>
+          <tr><td><code>.container-md</code></td><td>100% até a tela <em>md</em>, depois vira <code>.container</code></td></tr>
+        </tbody>
+      </table>
+      <div class="exemplo">
+        <div class="container bg-info-subtle border py-3 mb-2">.container</div>
+        <div class="container-fluid bg-warning-subtle border py-3">.container-fluid</div>
+      </div>
+      <p class="text-body-secondary small">Diminua a janela do navegador e compare as duas caixas.</p>
+    </section>
+
+    <!-- ============================================================ -->
+    <section class="secao" id="grid">
+      <h2><span class="numero">3</span>Sistema de grid (linhas e colunas)</h2>
+      <p>O grid divide a largura em <strong>12 partes</strong>. A estrutura é sempre a mesma:</p>
+      <p class="fs-5"><code>.container</code> <i class="bi bi-arrow-right"></i> <code>.row</code>
+        <i class="bi bi-arrow-right"></i> <code>.col</code></p>
+
+      <h3 class="h5 mt-4">3.1 Colunas automáticas</h3>
+      <p><code>.col</code> sem número divide o espaço em partes iguais.</p>
+      <div class="exemplo exemplo-grid">
+        <div class="row">
+          <div class="col">1 de 3</div>
+          <div class="col">2 de 3</div>
+          <div class="col">3 de 3</div>
+        </div>
+      </div>
+
+      <h3 class="h5 mt-4">3.2 Colunas com tamanho</h3>
+      <p>O número diz quantas das 12 partes a coluna ocupa. A soma da linha deve dar 12.</p>
+      <div class="exemplo exemplo-grid">
+        <div class="row">
+          <div class="col-8">.col-8</div>
+          <div class="col-4">.col-4</div>
+        </div>
+      </div>
+
+      <h3 class="h5 mt-4">3.3 Responsivo: breakpoints</h3>
+      <p>Os <strong>breakpoints</strong> são larguras de tela. A classe vale <strong>daquela largura para cima</strong>.</p>
+      <table class="table table-sm table-striped w-auto">
+        <thead><tr><th>Sigla</th><th>Tela</th><th>A partir de</th><th>Exemplo de classe</th></tr></thead>
+        <tbody>
+          <tr><td>(nenhuma)</td><td>celular</td><td>0px</td><td><code>.col-12</code></td></tr>
+          <tr><td><code>sm</code></td><td>celular deitado</td><td>576px</td><td><code>.col-sm-6</code></td></tr>
+          <tr><td><code>md</code></td><td>tablet</td><td>768px</td><td><code>.col-md-4</code></td></tr>
+          <tr><td><code>lg</code></td><td>notebook</td><td>992px</td><td><code>.col-lg-3</code></td></tr>
+          <tr><td><code>xl</code></td><td>desktop</td><td>1200px</td><td><code>.col-xl-2</code></td></tr>
+          <tr><td><code>xxl</code></td><td>tela grande</td><td>1400px</td><td><code>.col-xxl-1</code></td></tr>
+        </tbody>
+      </table>
+      <p>Lendo o exemplo abaixo: "no celular, 1 por linha; no tablet, 2 por linha; no notebook, 4 por linha".</p>
+      <div class="exemplo exemplo-grid">
+        <div class="row g-3">
+          <div class="col-12 col-md-6 col-lg-3">Item 1</div>
+          <div class="col-12 col-md-6 col-lg-3">Item 2</div>
+          <div class="col-12 col-md-6 col-lg-3">Item 3</div>
+          <div class="col-12 col-md-6 col-lg-3">Item 4</div>
+        </div>
+      </div>
+      <div class="dica">
+        <i class="bi bi-phone"></i> O Bootstrap é <strong>mobile first</strong>: a gente pensa primeiro no celular
+        (classe sem sigla) e vai adicionando o que muda nas telas maiores.
+      </div>
+
+      <h3 class="h5 mt-4">3.4 Espaço entre colunas (gutter)</h3>
+      <p><code>g-0</code> até <code>g-5</code> na <code>.row</code> controla o espaço entre as colunas.
+        <code>gx-*</code> só na horizontal, <code>gy-*</code> só na vertical.</p>
+      <div class="exemplo exemplo-grid">
+        <div class="row g-4">
+          <div class="col-6">.row.g-4</div>
+          <div class="col-6">.row.g-4</div>
+          <div class="col-6">.row.g-4</div>
+          <div class="col-6">.row.g-4</div>
+        </div>
+      </div>
+
+      <h3 class="h5 mt-4">3.5 Centralizar e empurrar colunas</h3>
+      <div class="exemplo exemplo-grid">
+        <div class="row justify-content-center mb-3">
+          <div class="col-6">centralizada com justify-content-center</div>
+        </div>
+        <div class="row">
+          <div class="col-4 offset-4">.col-4 .offset-4</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <section class="secao" id="espacamento">
+      <h2><span class="numero">4</span>Espaçamento: margin e padding</h2>
+      <p>O nome da classe é montado com 3 pedaços: <strong>propriedade + lado + tamanho</strong>.</p>
+      <div class="row g-3">
+        <div class="col-md-4">
+          <div class="card h-100"><div class="card-body">
+            <h3 class="h6">Propriedade</h3>
+            <p class="mb-0"><code>m</code> = margin (fora)<br><code>p</code> = padding (dentro)</p>
+          </div></div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100"><div class="card-body">
+            <h3 class="h6">Lado</h3>
+            <p class="mb-0"><code>t</code> topo · <code>b</code> baixo · <code>s</code> início (esquerda) ·
+              <code>e</code> fim (direita) · <code>x</code> esquerda e direita · <code>y</code> cima e baixo ·
+              (nada) todos</p>
+          </div></div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100"><div class="card-body">
+            <h3 class="h6">Tamanho</h3>
+            <p class="mb-0"><code>0</code> · <code>1</code> · <code>2</code> · <code>3</code> · <code>4</code> ·
+              <code>5</code> · <code>auto</code></p>
+          </div></div>
+        </div>
+      </div>
+      <p class="mt-3">Exemplos: <code>mt-3</code> = margem no topo tamanho 3 · <code>px-4</code> = padding nas laterais
+        tamanho 4 · <code>mb-0</code> = tira a margem de baixo · <code>mx-auto</code> = centraliza um bloco.</p>
+      <div class="exemplo">
+        <div class="bg-success-subtle p-1 mb-2">p-1</div>
+        <div class="bg-success-subtle p-3 mb-2">p-3</div>
+        <div class="bg-success-subtle p-5 mb-2">p-5</div>
+        <div class="bg-success-subtle px-5 py-2 mb-2">px-5 py-2</div>
+        <div class="bg-success-subtle p-3 mx-auto w-50">mx-auto w-50 (centralizado)</div>
+      </div>
+      <div class="dica">
+        <i class="bi bi-arrows-angle-expand"></i> Também dá para usar breakpoint: <code>p-2 p-md-5</code> = pouco
+        espaço no celular e bastante a partir do tablet.
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <section class="secao" id="cores">
+      <h2><span class="numero">5</span>Cores de texto e de fundo</h2>
+      <p>O Bootstrap tem um conjunto de cores com nomes que indicam a <strong>intenção</strong>:</p>
+      <div class="exemplo">
+        <p class="text-primary">text-primary: cor principal</p>
+        <p class="text-secondary">text-secondary: secundária</p>
+        <p class="text-success">text-success: sucesso</p>
+        <p class="text-danger">text-danger: erro, perigo</p>
+        <p class="text-warning">text-warning: atenção</p>
+        <p class="text-info">text-info: informação</p>
+        <p class="text-body-secondary mb-0">text-body-secondary: texto mais apagado</p>
+      </div>
+      <p>Para fundo, troque <code>text-</code> por <code>bg-</code>. A classe <code>text-bg-*</code> já escolhe
+        uma cor de texto que dá para ler em cima do fundo.</p>
+      <div class="exemplo">
+        <div class="p-2 mb-2 bg-primary text-white">bg-primary text-white</div>
+        <div class="p-2 mb-2 text-bg-warning">text-bg-warning</div>
+        <div class="p-2 mb-2 text-bg-dark">text-bg-dark</div>
+        <div class="p-2 bg-danger-subtle text-danger-emphasis">bg-danger-subtle text-danger-emphasis</div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <section class="secao" id="tipografia">
+      <h2><span class="numero">6</span>Tipografia</h2>
+      <div class="exemplo">
+        <h1 class="display-4">display-4: título de destaque</h1>
+        <p class="h3">Um parágrafo com cara de h3 (classe h3)</p>
+        <p class="lead">lead: parágrafo de introdução, um pouco maior.</p>
+        <p class="fs-5">fs-5: tamanho de fonte (fs-1 é o maior, fs-6 o menor)</p>
+        <p class="fw-bold">fw-bold: negrito</p>
+        <p class="fw-light">fw-light: fino</p>
+        <p class="fst-italic">fst-italic: itálico</p>
+        <p class="text-uppercase">text-uppercase: tudo maiúsculo</p>
+        <p class="text-center">text-center: centralizado</p>
+        <p class="text-end">text-end: alinhado à direita</p>
+        <p class="text-decoration-underline mb-0">text-decoration-underline: sublinhado</p>
+      </div>
+      <div class="dica">
+        <i class="bi bi-universal-access"></i> Use a tag certa pelo significado (<code>h1</code>, <code>h2</code>…)
+        e a classe para o tamanho. Ex.: um <code>&lt;h2 class="h4"&gt;</code> continua sendo um subtítulo, só que menor.
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <section class="secao" id="flex">
+      <h2><span class="numero">7</span>Display e Flexbox</h2>
+      <h3 class="h5">7.1 Mostrar e esconder</h3>
+      <p><code>d-none</code> esconde, <code>d-block</code> mostra. Com breakpoint dá para esconder só em algumas telas.</p>
+      <div class="exemplo">
+        <p class="d-md-none text-bg-danger p-2">Só aparece no celular (d-md-none)</p>
+        <p class="d-none d-md-block text-bg-success p-2 mb-0">Só aparece do tablet para cima (d-none d-md-block)</p>
+      </div>
+
+      <h3 class="h5 mt-4">7.2 Flexbox</h3>
+      <p><code>d-flex</code> coloca os filhos lado a lado. Depois a gente alinha:</p>
+      <ul>
+        <li><code>justify-content-*</code>: no sentido da linha (<code>start</code>, <code>center</code>,
+          <code>end</code>, <code>between</code>, <code>around</code>);</li>
+        <li><code>align-items-*</code>: no outro sentido (<code>start</code>, <code>center</code>, <code>end</code>);</li>
+        <li><code>gap-*</code>: espaço entre os filhos;</li>
+        <li><code>flex-column</code>: empilha; <code>flex-wrap</code>: deixa quebrar linha.</li>
+      </ul>
+      <div class="exemplo">
+        <div class="d-flex justify-content-between align-items-center bg-light border p-3 mb-3">
+          <strong>Logo</strong>
+          <span>justify-content-between</span>
+          <button class="btn btn-primary btn-sm">Entrar</button>
+        </div>
+        <div class="d-flex justify-content-center gap-3 bg-light border p-3 mb-3">
+          <span class="badge text-bg-primary">A</span>
+          <span class="badge text-bg-primary">B</span>
+          <span class="badge text-bg-primary">C</span>
+        </div>
+        <div class="d-flex flex-column flex-md-row gap-2 bg-light border p-3">
+          <div class="p-2 border bg-white">Empilhado no celular</div>
+          <div class="p-2 border bg-white">e lado a lado no tablet</div>
+          <div class="p-2 border bg-white">(flex-column flex-md-row)</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <section class="secao" id="bordas">
+      <h2><span class="numero">8</span>Bordas, cantos e sombras</h2>
+      <div class="exemplo">
+        <div class="d-flex flex-wrap gap-3">
+          <div class="p-3 border">border</div>
+          <div class="p-3 border border-primary border-2">border-primary border-2</div>
+          <div class="p-3 border-bottom border-danger border-3">border-bottom</div>
+          <div class="p-3 border rounded">rounded</div>
+          <div class="p-3 border rounded-4">rounded-4</div>
+          <div class="p-3 border rounded-pill">rounded-pill</div>
+          <div class="p-3 shadow-sm">shadow-sm</div>
+          <div class="p-3 shadow">shadow</div>
+          <div class="p-3 shadow-lg">shadow-lg</div>
+        </div>
+      </div>
+      <p class="mt-3">Tamanhos também são utilitários: <code>w-25</code>, <code>w-50</code>, <code>w-75</code>,
+        <code>w-100</code> (largura em %) e <code>h-100</code> (altura).</p>
+    </section>
+
+    <!-- ============================================================ -->
+    <section class="secao" id="botoes">
+      <h2><span class="numero">9</span>Botões</h2>
+      <p>Todo botão tem a classe base <code>btn</code> + uma classe de cor.</p>
+      <div class="exemplo">
+        <div class="d-flex flex-wrap gap-2 mb-3">
+          <button type="button" class="btn btn-primary">Primary</button>
+          <button type="button" class="btn btn-secondary">Secondary</button>
+          <button type="button" class="btn btn-success">Success</button>
+          <button type="button" class="btn btn-danger">Danger</button>
+          <button type="button" class="btn btn-warning">Warning</button>
+          <button type="button" class="btn btn-dark">Dark</button>
+          <button type="button" class="btn btn-link">Link</button>
+        </div>
+        <div class="d-flex flex-wrap gap-2 mb-3">
+          <button type="button" class="btn btn-outline-primary">Outline primary</button>
+          <button type="button" class="btn btn-outline-danger">Outline danger</button>
+        </div>
+        <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
+          <button type="button" class="btn btn-primary btn-lg">Grande (btn-lg)</button>
+          <button type="button" class="btn btn-primary">Normal</button>
+          <button type="button" class="btn btn-primary btn-sm">Pequeno (btn-sm)</button>
+          <button type="button" class="btn btn-primary" disabled>Desabilitado</button>
+        </div>
+        <a href="#botoes" class="btn btn-success w-100">Um link com cara de botão, largura total (w-100)</a>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <section class="secao" id="imagens">
+      <h2><span class="numero">10</span>Imagens</h2>
+      <p><code>img-fluid</code> faz a imagem nunca passar da largura de quem a contém. É a classe mais usada
+        com imagens.</p>
+      <div class="exemplo">
+        <div class="row g-3 align-items-center">
+          <div class="col-md-6">
+            <img src="https://picsum.photos/id/1015/800/450" class="img-fluid rounded" alt="Rio entre montanhas">
+          </div>
+          <div class="col-6 col-md-3 text-center">
+            <img src="https://picsum.photos/id/64/200/200" class="img-fluid rounded-circle" alt="Retrato de uma pessoa">
+            <p class="small mt-2 mb-0">rounded-circle</p>
+          </div>
+          <div class="col-6 col-md-3 text-center">
+            <img src="https://picsum.photos/id/237/200/200" class="img-thumbnail" alt="Filhote de cachorro">
+            <p class="small mt-2 mb-0">img-thumbnail</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <section class="secao border-0" id="resumo">
+      <h2><i class="bi bi-journal-check text-primary"></i> Resumo da aula</h2>
+      <div class="row g-3">
+        <div class="col-md-6 col-lg-4">
+          <div class="p-3 border rounded h-100">
+            <h3 class="h6"><i class="bi bi-grid-3x3"></i> Layout</h3>
+            <code>container</code> · <code>row</code> · <code>col-md-6</code> · <code>g-3</code>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="p-3 border rounded h-100">
+            <h3 class="h6"><i class="bi bi-arrows-move"></i> Espaço</h3>
+            <code>m-*</code> · <code>p-*</code> · <code>mt-3</code> · <code>px-4</code> · <code>mx-auto</code>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="p-3 border rounded h-100">
+            <h3 class="h6"><i class="bi bi-palette"></i> Cor</h3>
+            <code>text-primary</code> · <code>bg-light</code> · <code>text-bg-dark</code>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="p-3 border rounded h-100">
+            <h3 class="h6"><i class="bi bi-fonts"></i> Texto</h3>
+            <code>display-4</code> · <code>lead</code> · <code>fw-bold</code> · <code>text-center</code>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="p-3 border rounded h-100">
+            <h3 class="h6"><i class="bi bi-distribute-horizontal"></i> Flex</h3>
+            <code>d-flex</code> · <code>justify-content-between</code> · <code>align-items-center</code> · <code>gap-2</code>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="p-3 border rounded h-100">
+            <h3 class="h6"><i class="bi bi-hand-index"></i> Botão e imagem</h3>
+            <code>btn btn-primary</code> · <code>btn-outline-*</code> · <code>img-fluid</code>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex flex-wrap gap-2 mt-4">
+        <a href="exercicio/README.md" class="btn btn-primary"><i class="bi bi-pencil-square"></i> Exercício da aula</a>
+        <a href="https://getbootstrap.com/docs/5.3/getting-started/introduction/" class="btn btn-outline-secondary" target="_blank">
+          <i class="bi bi-book"></i> Documentação oficial
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-dark text-white-50 py-4">
+    <div class="container d-flex justify-content-between">
+      <span>Bootstrap 5 · Aula 1</span>
+      <a href="../aula-02/index.html" class="link-light">Próxima aula <i class="bi bi-arrow-right"></i></a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../recursos/mostrar-codigo.js"></script>
+</body>
+</html>

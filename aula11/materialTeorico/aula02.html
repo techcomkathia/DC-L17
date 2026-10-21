@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aula 2 · Componentes e ícones do Bootstrap 5</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="../recursos/aulas.css" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg bg-dark sticky-top" data-bs-theme="dark">
+    <div class="container">
+      <a class="navbar-brand" href="homeAula.html"><i class="bi bi-bootstrap-fill"></i> Aula 2</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-aula">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu-aula">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="aula01.html"><i class="bi bi-arrow-left"></i> Aula 1</a></li>
+          <li class="nav-item"><a class="nav-link" href="#icones">Ícones</a></li>
+          <li class="nav-item"><a class="nav-link" href="#navbar">Navbar</a></li>
+          <li class="nav-item"><a class="nav-link" href="#cards">Cards</a></li>
+          <li class="nav-item"><a class="nav-link" href="#alertas">Alertas</a></li>
+          <li class="nav-item"><a class="nav-link" href="#formularios">Formulários</a></li>
+          <li class="nav-item"><a class="nav-link" href="#accordion">Accordion</a></li>
+          <li class="nav-item"><a class="nav-link" href="#modal">Modal</a></li>
+          <li class="nav-item"><a class="nav-link" href="#carousel">Carousel</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="bg-primary text-white py-5">
+    <div class="container">
+      <p class="text-uppercase fw-semibold mb-1">Bootstrap 5 · Aula 2</p>
+      <h1 class="display-5 fw-bold">Componentes e ícones</h1>
+      <p class="lead mb-0">Peças prontas (menus, cartões, formulários, janelas…) montadas com as classes da Aula 1,
+        mais os ícones do Bootstrap Icons.</p>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- ============================================================ -->
+    <section class="secao" id="componente">
+      <h2><span class="numero">0</span>O que é um componente?</h2>
+      <p>Na Aula 1 cada classe fazia <strong>uma coisa</strong>. Um <strong>componente</strong> é um conjunto de
+        HTML + classes que forma uma peça inteira de interface. A receita é sempre:</p>
+      <ol>
+        <li>abrir a <a href="https://getbootstrap.com/docs/5.3/components/accordion/" target="_blank">documentação</a>
+          e achar o componente;</li>
+        <li>copiar o exemplo;</li>
+        <li>trocar os textos e ajustar com as classes utilitárias que já conhecemos.</li>
+      </ol>
+      <div class="dica">
+        <i class="bi bi-cpu"></i> Alguns componentes <strong>se mexem</strong> (abrem, fecham, deslizam): navbar no
+        celular, accordion, modal e carousel. Eles precisam do <strong>JavaScript do Bootstrap</strong>
+        (<code>bootstrap.bundle.min.js</code>) no fim do <code>&lt;body&gt;</code>. Quem liga o botão ao componente
+        são os atributos <code>data-bs-toggle</code> e <code>data-bs-target</code>: não precisamos escrever JS.
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <section class="secao" id="icones">
+      <h2><span class="numero">1</span>Ícones: Bootstrap Icons</h2>
+      <p>O Bootstrap Icons é uma biblioteca separada com mais de 2.000 ícones gratuitos. Para usar, adicione mais
+        um link no <code>&lt;head&gt;</code>:</p>
+      <pre class="codigo-fixo"><code>&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"&gt;</code></pre>
+      <p>Depois, cada ícone é uma tag <code>&lt;i&gt;</code> com a classe <code>bi</code> + <code>bi-nome-do-icone</code>.
+        Os nomes estão em <a href="https://icons.getbootstrap.com/" target="_blank">icons.getbootstrap.com</a>.</p>
+      <div class="exemplo">
+        <div class="d-flex flex-wrap gap-4 fs-2">
+          <i class="bi bi-house"></i>
+          <i class="bi bi-heart"></i>
+          <i class="bi bi-heart-fill"></i>
+          <i class="bi bi-cart3"></i>
+          <i class="bi bi-person-circle"></i>
+          <i class="bi bi-envelope"></i>
+          <i class="bi bi-whatsapp"></i>
+          <i class="bi bi-instagram"></i>
+          <i class="bi bi-github"></i>
+        </div>
+      </div>
+      <p>O ícone se comporta como <strong>texto</strong>: muda de tamanho com <code>fs-*</code> e de cor com
+        <code>text-*</code>.</p>
+      <div class="exemplo">
+        <p>
+          <i class="bi bi-star-fill text-warning fs-6"></i>
+          <i class="bi bi-star-fill text-warning fs-4"></i>
+          <i class="bi bi-star-fill text-warning fs-2"></i>
+          <i class="bi bi-star-fill text-warning display-4"></i>
+        </p>
+        <p class="mb-0">
+          <i class="bi bi-check-circle-fill text-success fs-3"></i>
+          <i class="bi bi-x-circle-fill text-danger fs-3"></i>
+          <i class="bi bi-info-circle-fill text-info fs-3"></i>
+        </p>
+      </div>
+      <p>Ícones combinam muito bem com botões e links:</p>
+      <div class="exemplo">
+        <div class="d-flex flex-wrap gap-2">
+          <button type="button" class="btn btn-success"><i class="bi bi-whatsapp"></i> Falar no WhatsApp</button>
+          <button type="button" class="btn btn-outline-danger"><i class="bi bi-trash"></i> Excluir</button>
+          <button type="button" class="btn btn-primary">Continuar <i class="bi bi-arrow-right"></i></button>
+          <button type="button" class="btn btn-dark" aria-label="Pesquisar"><i class="bi bi-search"></i></button>
+        </div>
+      </div>
+      <div class="dica">
+        <i class="bi bi-universal-access"></i> Quando o botão tem <strong>só o ícone</strong>, coloque um
+        <code>aria-label</code> descrevendo a ação. Quem usa leitor de tela não vê o desenho.
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <section class="secao" id="navbar">
+      <h2><span class="numero">2</span>Navbar (barra de navegação)</h2>
+      <p>O menu do topo do site. No celular ele vira um botão "hambúrguer" que abre e fecha.</p>
+      <ul>
+        <li><code>navbar-expand-lg</code>: a partir de <em>lg</em> o menu fica aberto; abaixo disso, vira hambúrguer;</li>
+        <li><code>navbar-brand</code>: o logo / nome do site;</li>
+        <li><code>navbar-toggler</code>: o botão hambúrguer. O <code>data-bs-target</code> aponta para o
+          <code>id</code> do que vai abrir;</li>
+        <li><code>collapse navbar-collapse</code>: a parte que se esconde no celular;</li>
+        <li><code>ms-auto</code> na lista empurra os links para a direita.</li>
+      </ul>
+      <div class="exemplo">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary rounded">
+          <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="#navbar"><i class="bi bi-flower1 text-success"></i> Raiz &amp; Cia</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-exemplo"
+              aria-controls="menu-exemplo" aria-expanded="false" aria-label="Abrir menu">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu-exemplo">
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link active" href="#navbar">Início</a></li>
+                <li class="nav-item"><a class="nav-link" href="#navbar">Kits</a></li>
+                <li class="nav-item"><a class="nav-link" href="#navbar">Como funciona</a></li>
+                <li class="nav-item"><a class="btn btn-success ms-lg-2" href="#navbar">Assinar</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <p class="text-body-secondary small">Diminua a janela para ver o botão hambúrguer aparecer.</p>
+    </section>
+
+    <!-- ============================================================ -->
+    <section class="secao" id="cards">
+      <h2><span class="numero">3</span>Cards</h2>
+      <p>Um "cartão" para agrupar imagem, título, texto e botão. É o componente mais usado em vitrines de produtos,
+        listas de serviços, equipe etc.</p>
+      <div class="exemplo">
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card h-100">
+              <img src="https://picsum.photos/id/292/600/400" class="card-img-top" alt="Legumes frescos">
+              <div class="card-body">
+                <h3 class="card-title h5">Kit Horta</h3>
+                <p class="card-text">Sementes de alface, rúcula e cenoura para começar a sua horta.</p>
+              </div>
+              <div class="card-footer bg-transparent border-0 pb-3">
+                <a href="#cards" class="btn btn-success w-100"><i class="bi bi-cart-plus"></i> Comprar</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 border-success">
+              <div class="card-header text-bg-success">Mais vendido</div>
+              <div class="card-body">
+                <h3 class="card-title h5">Kit Temperos</h3>
+                <p class="card-text">Manjericão, salsinha e cebolinha.</p>
+                <p class="fs-3 fw-bold mb-0">R$ 49,90</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 text-center shadow-sm">
+              <div class="card-body">
+                <i class="bi bi-truck display-5 text-primary"></i>
+                <h3 class="card-title h5 mt-2">Entrega grátis</h3>
+                <p class="card-text text-body-secondary">Card só com ícone e texto, ótimo para listar vantagens.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="dica">
+        <i class="bi bi-arrows-vertical"></i> <code>h-100</code> nos cards deixa todos da mesma linha com a mesma
+        altura, mesmo com textos de tamanhos diferentes.
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <section class="secao" id="alertas">
+      <h2><span class="numero">4</span>Alertas e badges</h2>
+      <p><strong>Alertas</strong> são mensagens de aviso. Use as mesmas cores da Aula 1.</p>
+      <div class="exemplo">
+        <div class="alert alert-success" role="alert">
+          <i class="bi bi-check-circle-fill"></i> Cadastro realizado com sucesso!
+        </div>
+        <div class="alert alert-danger" role="alert">
+          <i class="bi bi-exclamation-octagon-fill"></i> Não foi possível salvar. Tente de novo.
+        </div>
+        <div class="alert alert-warning alert-dismissible fade show mb-0" role="alert">
+          <i class="bi bi-exclamation-triangle-fill"></i> Este alerta pode ser fechado no X.
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fechar"></button>
+        </div>
+      </div>
+      <p><strong>Badges</strong> são etiquetas pequenas, boas para contadores e status.</p>
+      <div class="exemplo">
+        <h3 class="h5">Novidades <span class="badge text-bg-danger">3</span></h3>
+        <p>
+          <span class="badge text-bg-success">Em estoque</span>
+          <span class="badge text-bg-secondary">Esgotado</span>
+          <span class="badge rounded-pill text-bg-warning">Promoção</span>
+        </p>
+        <button type="button" class="btn btn-primary position-relative">
+          <i class="bi bi-bell"></i> Notificações
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill text-bg-danger">9</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <section class="secao" id="formularios">
+      <h2><span class="numero">5</span>Formulários</h2>
+      <p>As classes principais:</p>
+      <ul>
+        <li><code>form-label</code> no <code>&lt;label&gt;</code>;</li>
+        <li><code>form-control</code> em <code>&lt;input&gt;</code> e <code>&lt;textarea&gt;</code>;</li>
+        <li><code>form-select</code> no <code>&lt;select&gt;</code>;</li>
+        <li><code>form-check</code> + <code>form-check-input</code> + <code>form-check-label</code> em checkbox e radio;</li>
+        <li><code>input-group</code> para "grudar" um ícone ou texto no campo.</li>
+      </ul>
+      <div class="exemplo">
+        <form class="row g-3">
+          <div class="col-md-6">
+            <label for="nome" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="nome" placeholder="Seu nome">
+          </div>
+          <div class="col-md-6">
+            <label for="email" class="form-label">E-mail</label>
+            <div class="input-group">
+              <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+              <input type="email" class="form-control" id="email" placeholder="voce@email.com">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label for="kit" class="form-label">Kit</label>
+            <select id="kit" class="form-select">
+              <option selected>Escolha...</option>
+              <option>Horta</option>
+              <option>Temperos</option>
+              <option>Flores</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <p class="form-label mb-2">Entrega</p>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="entrega" id="mensal" checked>
+              <label class="form-check-label" for="mensal">Mensal</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="entrega" id="trimestral">
+              <label class="form-check-label" for="trimestral">Trimestral</label>
+            </div>
+          </div>
+          <div class="col-12">
+            <label for="mensagem" class="form-label">Mensagem</label>
+            <textarea id="mensagem" class="form-control" rows="3"></textarea>
+          </div>
+          <div class="col-12">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" role="switch" id="novidades">
+              <label class="form-check-label" for="novidades">Quero receber novidades (form-switch)</label>
+            </div>
+          </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary"><i class="bi bi-send"></i> Enviar</button>
+          </div>
+        </form>
+      </div>
+      <div class="dica">
+        <i class="bi bi-link-45deg"></i> O <code>for</code> do label tem que ser igual ao <code>id</code> do campo.
+        Assim, clicar no texto coloca o cursor no campo (e o leitor de tela sabe qual é o nome dele).
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <section class="secao" id="accordion">
+      <h2><span class="numero">6</span>Accordion (sanfona)</h2>
+      <p>Perguntas frequentes são o uso clássico. Cada item tem um botão (<code>accordion-button</code>) que abre o seu
+        conteúdo (<code>accordion-collapse</code>). O <code>data-bs-parent</code> faz um item fechar quando outro abre.</p>
+      <div class="exemplo">
+        <div class="accordion" id="faq">
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq-1">
+                Como funciona a assinatura?
+              </button>
+            </h3>
+            <div id="faq-1" class="accordion-collapse collapse show" data-bs-parent="#faq">
+              <div class="accordion-body">Você escolhe um kit e recebe uma caixa nova todo mês.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-2">
+                Posso cancelar quando quiser?
+              </button>
+            </h3>
+            <div id="faq-2" class="accordion-collapse collapse" data-bs-parent="#faq">
+              <div class="accordion-body">Sim, sem multa e sem burocracia.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-3">
+                Vocês entregam no Brasil todo?
+              </button>
+            </h3>
+            <div id="faq-3" class="accordion-collapse collapse" data-bs-parent="#faq">
+              <div class="accordion-body">Sim, pelos Correios.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <section class="secao" id="modal">
+      <h2><span class="numero">7</span>Modal (janela por cima da página)</h2>
+      <p>São duas partes: o <strong>botão</strong> que abre (com <code>data-bs-toggle="modal"</code>) e o
+        <strong>modal</strong> em si (com o <code>id</code> que o botão aponta). O modal fica escondido até alguém
+        clicar.</p>
+      <div class="exemplo">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-exemplo">
+          <i class="bi bi-window"></i> Abrir modal
+        </button>
+
+        <div class="modal fade" id="modal-exemplo" tabindex="-1" aria-labelledby="modal-exemplo-titulo" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3 class="modal-title fs-5" id="modal-exemplo-titulo">Confirmar assinatura</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+              </div>
+              <div class="modal-body">
+                Você vai assinar o <strong>Kit Horta</strong> por R$ 49,90 ao mês.
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-success" data-bs-dismiss="modal">Confirmar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="small text-body-secondary">Tamanhos: <code>modal-sm</code>, <code>modal-lg</code>,
+        <code>modal-xl</code> e <code>modal-fullscreen</code>, junto do <code>modal-dialog</code>.</p>
+    </section>
+
+    <!-- ============================================================ -->
+    <section class="secao" id="carousel">
+      <h2><span class="numero">8</span>Carousel (slides)</h2>
+      <p>Imagens que passam sozinhas. O item que aparece primeiro leva a classe <code>active</code>, e as setas
+        apontam para o <code>id</code> do carousel.</p>
+      <div class="exemplo">
+        <div id="carousel-exemplo" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carousel-exemplo" data-bs-slide-to="0" class="active" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carousel-exemplo" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carousel-exemplo" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner rounded">
+            <div class="carousel-item active">
+              <img src="https://picsum.photos/id/1043/1200/450" class="d-block w-100" alt="Floresta">
+              <div class="carousel-caption d-none d-md-block">
+                <h3 class="h5">Primeiro slide</h3>
+                <p>A legenda some no celular (d-none d-md-block).</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="https://picsum.photos/id/1039/1200/450" class="d-block w-100" alt="Cachoeira">
+            </div>
+            <div class="carousel-item">
+              <img src="https://picsum.photos/id/1080/1200/450" class="d-block w-100" alt="Morangos">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carousel-exemplo" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carousel-exemplo" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Próximo</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <section class="secao border-0" id="resumo">
+      <h2><i class="bi bi-journal-check text-primary"></i> Resumo da aula</h2>
+      <table class="table align-middle">
+        <thead><tr><th>Componente</th><th>Classe principal</th><th>Precisa do JS?</th></tr></thead>
+        <tbody>
+          <tr><td><i class="bi bi-emoji-smile"></i> Ícone</td><td><code>bi bi-nome</code></td><td>Não (precisa do CSS dos ícones)</td></tr>
+          <tr><td><i class="bi bi-menu-button-wide"></i> Navbar</td><td><code>navbar navbar-expand-lg</code></td><td>Sim, para o hambúrguer</td></tr>
+          <tr><td><i class="bi bi-card-heading"></i> Card</td><td><code>card</code> + <code>card-body</code></td><td>Não</td></tr>
+          <tr><td><i class="bi bi-exclamation-circle"></i> Alerta</td><td><code>alert alert-success</code></td><td>Só para fechar</td></tr>
+          <tr><td><i class="bi bi-tag"></i> Badge</td><td><code>badge text-bg-danger</code></td><td>Não</td></tr>
+          <tr><td><i class="bi bi-input-cursor-text"></i> Formulário</td><td><code>form-control</code>, <code>form-select</code></td><td>Não</td></tr>
+          <tr><td><i class="bi bi-list-nested"></i> Accordion</td><td><code>accordion</code></td><td>Sim</td></tr>
+          <tr><td><i class="bi bi-window-stack"></i> Modal</td><td><code>modal</code></td><td>Sim</td></tr>
+          <tr><td><i class="bi bi-images"></i> Carousel</td><td><code>carousel slide</code></td><td>Sim</td></tr>
+        </tbody>
+      </table>
+      <div class="d-flex flex-wrap gap-2 mt-4">
+        <a href="exercicio/README.md" class="btn btn-primary"><i class="bi bi-pencil-square"></i> Exercício da aula</a>
+        <a href="https://getbootstrap.com/docs/5.3/components/accordion/" class="btn btn-outline-secondary" target="_blank">
+          <i class="bi bi-book"></i> Todos os componentes
+        </a>
+        <a href="https://icons.getbootstrap.com/" class="btn btn-outline-secondary" target="_blank">
+          <i class="bi bi-search-heart"></i> Buscar ícones
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-dark text-white-50 py-4">
+    <div class="container d-flex justify-content-between">
+      <a href="../aula-01/index.html" class="link-light"><i class="bi bi-arrow-left"></i> Aula anterior</a>
+      <span>Bootstrap 5 · Aula 2</span>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../recursos/mostrar-codigo.js"></script>
+</body>
+</html>

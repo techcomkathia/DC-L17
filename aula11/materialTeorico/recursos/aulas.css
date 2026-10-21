@@ -1,0 +1,72 @@
+/* Estilo só do material de aula (não faz parte do Bootstrap). */
+
+html {
+  scroll-padding-top: 5rem;
+}
+
+.secao {
+  padding-block: 3rem;
+  border-bottom: 1px solid var(--bs-border-color);
+}
+
+.secao h2 .numero {
+  color: var(--bs-primary);
+  margin-right: 0.5rem;
+}
+
+/* Área onde o exemplo aparece funcionando */
+.exemplo {
+  border: 1px dashed var(--bs-border-color);
+  border-radius: 0.5rem 0.5rem 0 0;
+  padding: 1.5rem;
+  background: var(--bs-body-bg);
+}
+
+/* Deixa visíveis as colunas do grid nos exemplos */
+.exemplo-grid [class*="col"] > div,
+.exemplo-grid [class*="col"]:not(:has(> div)) {
+  background: var(--bs-primary-bg-subtle);
+  border: 1px solid var(--bs-primary-border-subtle);
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+}
+
+/* Código gerado por mostrar-codigo.js */
+.bloco-codigo {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.bloco-codigo pre {
+  margin: 0;
+  padding: 1.25rem;
+  max-height: 22rem;
+  overflow: auto;
+  background: #1e1e2e;
+  color: #e6e6f0;
+  border-radius: 0 0 0.5rem 0.5rem;
+  font-size: 0.85rem;
+}
+
+.botao-copiar {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+}
+
+/* Código escrito à mão (sem exemplo ao vivo) */
+.codigo-fixo {
+  background: #1e1e2e;
+  color: #e6e6f0;
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.dica {
+  border-left: 4px solid var(--bs-warning);
+  background: var(--bs-warning-bg-subtle);
+  padding: 1rem 1.25rem;
+  border-radius: 0.25rem;
+  margin-block: 1rem;
+}
