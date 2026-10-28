@@ -44,3 +44,7 @@ console.log( numeroConvertido)
 // prompt
 // Number
 // parseInt ou parseFloat
+
+
+console.log (`Exemplo de tamplate string ${numeroInteiro} para usar o valor de uma variável use ${numeroInteiro}`)
+console.log("Concatenação de texto " + numeroInteiro + " para usar o valor de uma variável use " + numeroInteiro)
