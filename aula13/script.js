@@ -20,3 +20,30 @@ Atualize o valor do produto para 10% a menos e exiba o novo valor no console com
 Peça ao usuário a quantidade de itens que ele deseja desse produto. Atualize o estoque e em seguida mostre o total da compra em um alert
 */
 
+/* COMANDOS GIT NO TERMINAL PARA CRIAÇÃO DE UMA NOVA BRANCH */
+
+/*
+git checkout -b nova-branch
+git push -u origin nova-branch
+ 
+1 -Cria a nova ramificação e muda para ela
+2 -Publica a nova ramificação para o repositório remoto
+3- Trabalhe normalmente com as adições, commits e pushs
+
+git add arquivo.html
+  ou
+git add .
+git commit -m 'exemplo de commit'
+git push origin nova-branch
+
+4- depois de todas as alterações e a funcionalidade estar pronta, vocé pode fechar a ramificação e voltar para a ramificação principal.
+
+git checkout main
+
+5- vá no repositório de github e abra uma nova pull request para a ramificação nova-branch
+6- aprove a pull request e ela vai para a ramificação main
+
+git pull origin main
+
+7- vai atualizar a ramificação local para a ramificação main com todas alterações do merge
+*/
