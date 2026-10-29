@@ -15,3 +15,11 @@ console.log( numero !== numeroString) // true
 let senha =  "123Mudar"
 let senhaDigitada = "123mudar"
 console.log( senha === senhaDigitada)
+
+
+console.log(2<4) // true
+console.log(2>=1) // true
+console.log(2<=2) // true
+console.log(2>=4) // false
+console.log(2!=4) // true
+console.log(!(2==4)) // !false -> true
