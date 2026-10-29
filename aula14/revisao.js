@@ -63,3 +63,16 @@ console.log(2 ** 3)
 console.log("10"**20)
 
 // poder não é dever. Então preferencialmente faça a conversão de tipo antes de utilizar qualquer operador aritmético
+
+
+//operadores de reatribuição
+//joão tem 5 maçãs e ganha mais 2 como atualizar a variável que armazena o valor das maçãs
+
+let macas = 5
+macas = macas + 2
+console.log( macas)
+
+// vai utilizar como referencia para soma o valor da própria variável que está sendo atualizada
+let macas2 = 5
+macas2 += 2
+console.log( macas2)
