@@ -10,7 +10,3 @@ for(let x=0; x<=10; x++){
     console.log(i)
 }
 
-//mostre no console todos os números divisíveis por 2 e por 5 de 0 até o número digitado pelo usuário
-
-//laço repetição for
-//condicional if com duas condições sendo testadas ao mesmo tempo
