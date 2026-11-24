@@ -30,7 +30,12 @@ const produtos = [
   //Arquivos atualizados, considere a versão que estiver no gitHub ( removida as funções de montagem da vitrine.)
   {
     nome: "Mochila Escolar",
-    imagem: "https://picsum.photos/seed/mochila/400/300"
+    imagem: "https://picsum.photos/seed/mochila/400/300",
+    categoria: "Papelaria", 
+    descricao: "Mochila para escola com alta capacidade e espaço, material resistente.",
+    precoAntigo: 250.00,
+    preco: 190.00,
+    selo: "Novo"
   },
 
   // ----- Produto 3 -----
@@ -38,7 +43,20 @@ const produtos = [
 
 ];
 
+const imagemProd = document.getElementsByClassName('card-imagem')[1]
+const categoriaProd = document.getElementsByClassName('card-categoria')[1]
+const tituloProd =  document.getElementsByClassName('card-titulo')[1]
+const descricaoProd = document.getElementsByClassName('card-descricao')[1]
+const precoProd = document.getElementsByClassName('preco')[1]
+const precoAntigoProd = document.getElementsByClassName('preco-antigo')[1]
 
+imagemProd.src = produtos[1].imagem
+imagemProd.alt = produtos[1].nome
+categoriaProd.innerHTML= produtos[1].categoria
+descricaoProd.innerHTML = produtos[1].descricao
+tituloProd.innerHTML = produtos[1].nome
+precoProd.innerHTML= formatarPreco(produtos[1].preco)
+precoAntigoProd.innerHTML = formatarPreco(produtos[1].precoAntigo)
 // =========================================
 // FUNÇÕES
 // =========================================
