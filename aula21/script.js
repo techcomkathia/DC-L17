@@ -3,6 +3,15 @@
 // Cada objeto é um produto da loja.
 // =========================================
 
+//selecionar elementos
+const tituloPagina = document.getElementsByClassName('cabecalho-titulo')[0]
+const subTituloPagina = document.getElementsByClassName('cabecalho-subtitulo')[0]
+
+//atividade 1
+tituloPagina.innerHTML = 'Loja Live 17'
+subTituloPagina.innerHTML = 'Resolução da atividade 1'
+
+
 const produtos = [
   // ----- Produto 1 (exemplo completo) -----
   {
@@ -37,54 +46,3 @@ function formatarPreco(valor) {
   return "R$ " + valor.toFixed(2).replace(".", ",");
 }
 
-// Recebe UM produto e devolve o HTML do card (em texto)
-function criarCard(produto) {
-  // Selo: só aparece se o produto tiver a propriedade "selo"
-  let htmlSelo = "";
-  if (produto.selo) {
-    htmlSelo = `<span class="selo">${produto.selo}</span>`;
-  }
-
-  // Preço antigo: só aparece se o produto tiver "precoAntigo"
-  let htmlPrecoAntigo = "";
-  if (produto.precoAntigo) {
-    htmlPrecoAntigo = `<span class="preco-antigo">${formatarPreco(produto.precoAntigo)}</span>`;
-  }
-
-  // Preço atual: se não tiver preço, mostra um aviso
-  let htmlPreco = "Sem preço";
-  if (produto.preco) {
-    htmlPreco = formatarPreco(produto.preco);
-  }
-
-  // Monta o card usando template string (crase ` `)
-  return `
-    <article class="card">
-      ${htmlSelo}
-      <img class="card-imagem" src="${produto.imagem}" alt="${produto.nome}">
-      <div class="card-conteudo">
-        <p class="card-categoria">${produto.categoria}</p>
-        <h3 class="card-titulo">${produto.nome}</h3>
-        <p class="card-descricao">${produto.descricao}</p>
-        <div class="card-precos">
-          ${htmlPrecoAntigo}
-          <span class="preco">${htmlPreco}</span>
-        </div>
-        <button class="botao">Comprar</button>
-      </div>
-    </article>
-  `;
-}
-
-
-// =========================================
-// MOSTRANDO OS PRODUTOS NA TELA
-// =========================================
-
-// Pega a <section class="vitrine"> do HTML
-const vitrine = document.querySelector(".vitrine");
-
-// Para cada produto do array, cria um card e coloca dentro da vitrine
-produtos.forEach(function (produto) {
-  vitrine.innerHTML += criarCard(produto);
-});
