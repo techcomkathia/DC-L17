@@ -1,0 +1,172 @@
+/* =========================================
+   CSS PRONTO - não precisa alterar este arquivo
+   Use as classes abaixo no seu HTML
+   ========================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f2f4f8;
+  color: #333;
+}
+
+/* ---------- Cabeçalho ---------- */
+.cabecalho {
+  background-color: #4a3aff;
+  color: white;
+  text-align: center;
+  padding: 32px 16px;
+}
+
+.cabecalho-titulo {
+  font-size: 2rem;
+}
+
+.cabecalho-subtitulo {
+  margin-top: 8px;
+  opacity: 0.9;
+}
+
+/* ---------- Vitrine (lista de cards) ---------- */
+.vitrine-titulo {
+  text-align: center;
+  margin: 32px 16px 16px;
+}
+
+.vitrine {
+  display: flex;
+  flex-wrap: wrap;          /* quebra para a linha de baixo quando não couber */
+  justify-content: center;
+  gap: 24px;
+  padding: 16px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ---------- Card ---------- */
+.card {
+  position: relative;       /* necessário para posicionar o selo */
+  width: 300px;
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-6px);  /* o card "sobe" ao passar o mouse */
+}
+
+.card-imagem {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-conteudo {
+  padding: 16px;
+}
+
+.card-categoria {
+  font-size: 0.8rem;
+  color: #4a3aff;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.card-titulo {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.card-descricao {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+/* ---------- Preços ---------- */
+.card-precos {
+  margin-bottom: 16px;
+}
+
+.preco {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #1a9e4b;
+}
+
+.preco-antigo {
+  font-size: 0.9rem;
+  color: #999;
+  text-decoration: line-through;  /* risca o preço */
+  margin-right: 8px;
+}
+
+/* ---------- Selos (etiqueta no canto do card) ---------- */
+.selo {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: #4a3aff;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+/* use junto com .selo:  class="selo selo-promocao" */
+.selo-promocao {
+  background-color: #e63946;
+}
+
+/* use junto com .selo:  class="selo selo-esgotado" */
+.selo-esgotado {
+  background-color: #555;
+}
+
+/* ---------- Botões ---------- */
+.botao {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #4a3aff;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.botao:hover {
+  background-color: #3426d6;
+}
+
+/* use junto com .botao:  class="botao botao-desativado" */
+.botao-desativado {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.botao-desativado:hover {
+  background-color: #ccc;
+}
+
+/* ---------- Rodapé ---------- */
+.rodape {
+  text-align: center;
+  padding: 24px;
+  margin-top: 32px;
+  color: #777;
+  font-size: 0.9rem;
+}
