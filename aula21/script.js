@@ -26,6 +26,8 @@ const produtos = [
 
   // ----- Produto 2 (incompleto) -----
   // TAREFA 2: complete este produto com categoria, descricao e preco
+  //faça a seleção dos elementos do document que já existem no HTML e altere o conteúdo das tags.
+  //Arquivos atualizados, considere a versão que estiver no gitHub ( removida as funções de montagem da vitrine.)
   {
     nome: "Mochila Escolar",
     imagem: "https://picsum.photos/seed/mochila/400/300"
