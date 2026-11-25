@@ -41,6 +41,16 @@ const produtos = [
   // ----- Produto 3 -----
   // TAREFA 3: crie um produto novo aqui embaixo (não esqueça da vírgula entre os objetos!)
 
+    {
+    nome: "Mochila Escolar Outra",
+    imagem: "https://picsum.photos/seed/mochila/400/300",
+    categoria: "Papelaria", 
+    descricao: "Mochila para escola com alta capacidade e espaço, material resistente.",
+    precoAntigo: 450.00,
+    preco: 390.00,
+    selo: "Novo"
+  },
+
 ];
 
 const imagemProd = document.getElementsByClassName('card-imagem')[1]
@@ -66,3 +76,34 @@ function formatarPreco(valor) {
   return "R$ " + valor.toFixed(2).replace(".", ",");
 }
 
+
+function inserirProduto(objProduto){
+  //selecionar o objeto do document que será modificado
+  const vitrine = document.getElementsByClassName('vitrine')[0]
+
+  vitrine.innerHTML+=`
+      <article class="card">
+        <img class="card-imagem"
+             src= ${objProduto.imagem}
+             alt=${objProduto.nome}>
+
+        <div class="card-conteudo">
+          <h3 class="card-titulo">${objProduto.nome}</h3>
+
+          <p class="card-categoria"> ${objProduto.categoria}</p>
+          <h3 class="card-titulo"> ${objProduto.nome}</h3>
+          <p class="card-descricao"> ${objProduto.descricao}</p>
+
+          <div class="card-precos">
+            <span class="preco-antigo"> ${objProduto.precoAntigo}</span>
+            <span class="preco"> ${objProduto.preco}</span>
+          </div>
+
+          <button class="botao">Comprar</button>
+        </div>
+      </article>
+  `
+}
+
+
+inserirProduto(produtos[2])
