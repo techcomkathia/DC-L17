@@ -1,0 +1,159 @@
+/* o import de fonts externas é sempre feito na primeira linha do arquivo de css */
+@import url('https://fonts.googleapis.com/css2?family=Notable&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+
+/* reset das margins e paddings  */
+*{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+/* ------Atividade1 ----------------- */
+/* definição das variáveis de css */
+/* Plano de fundo barra de navegação: #1E1F22
+Títulos e plano de fundo botões: #FFAE00
+Plano de fundo cards: RGBA(37, 37, 37, 0.8)
+Textos: #ffffff */
+
+/* add, commit e push (git flow)  pela interface / controle de código fonte */
+
+:root{
+    --nome-variavel: 'valor';
+    --corBox:rgba(37, 37, 37, 0.8);
+    --corBarraNavegacao:rgb(30, 31, 34);
+    --subTituloEbotoes: rgb(255, 174, 0);
+    /* altura do cabeçalho fixo: o valor real é calculado pelo JavaScript */
+    --alturaCabecalho: 250px;
+    --texto: white;
+}
+
+body{
+    background-image: url('https://raw.githubusercontent.com/techcomkathia/aula08-L17/main/imagens/bg.png');
+    text-align: center;
+    color: var(--texto);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* espaço do tamanho do cabeçalho para ele não cobrir o conteúdo */
+    padding-top: calc(var(--alturaCabecalho) + 20px);
+}
+
+main{
+    position: static;
+}
+
+header{
+    background-color: var(--corBarraNavegacao);
+    text-align: center;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position:fixed;
+
+    /* z-index para deixar o cabeçalho fixo superior a todos os outros elementos incluindo os do bootstrap */
+    z-index: 1030;
+    top: 0;
+
+
+}
+
+[id]{
+    /* corregir o scroll da barra de navegação para compensar o tamanho do cabeçalho */
+    scroll-margin-top: calc(var(--alturaCabecalho) + 20px);
+}
+
+
+nav ul{
+    display: flex;
+}
+
+nav ul li{
+    list-style: none;
+    margin: 0 10px;
+}
+
+a{
+    text-decoration: none;
+    color: var(--texto);
+    font-weight: bolder;
+
+}
+
+
+.relativa{
+    position: relative;
+    top: 250px;
+    z-index:-1;
+}
+
+.redondo{
+    width: 20px;
+    height: 20px;
+    /* border-radius: 50%; */
+}
+
+
+/* configurar a imagem de plano de fundo e centralizar os textos na tela */
+
+
+
+/* faça a estilização dos cards dos produtos. Observe as classes boxProduto e boxImg
+
+a largura do box produto será de 890px o arredondamento de bordas será de 10px e a cor de fundo será a variável --corBox. A largura da imagem do produto será de 400px. O título do produto terá a cor da variável --subTituloEbotoes e o texto terá a cor da variável --texto.
+Utilizem os conceitos do flexbox para alinhar os elementos do card e alinhar os cards na tela.
+
+
+*/
+
+.boxProduto{
+    max-width: 890px;
+    /* width: 890px; */
+    background-color: var(--corBox);
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 20px;
+}
+
+.boxImg img{
+    width: 400px;
+}
+
+.boxTexto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 400px;
+}
+
+
+
+h1,h2, h3, p, button{
+    margin: 10px;
+}
+
+h2{
+    color: var(--subTituloEbotoes);
+    font-family: 'Notable', 'Arial', sans-serif;
+}
+
+.btn{
+    width: 150px;
+    padding: 10px;
+    background-color: var(--subTituloEbotoes);
+    border: none;
+    border-radius: 10px;
+    color: var(--texto);
+}
+
+p{
+    text-align: justify;
+}

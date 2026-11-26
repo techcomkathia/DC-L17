@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- testar o controle de versionamento -->
+    <link rel="stylesheet" href="style.css">
+    <title>RS-Burger</title>
+</head>
+
+<body>
+
+    <header>
+        <img class="logo rounded-3" src="https://raw.githubusercontent.com/techcomkathia/aula08-L17/main/imagens/logo.png" alt="Logo">
+        <nav>
+            <ul>
+                <li><a href="#burguer">Hamburgueres</a></li>
+                <li><a href="#acompanhamentos">Acompanhamentos</a></li>
+                <li><a href="#bebidas">Bebidas</a></li>
+                <li><a href="#" data-bs-toggle="offcanvas" data-bs-target="#carrinho" aria-controls="offcanvasRight">Carrinho</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="carrinho" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasRightLabel">Carrinho</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt earum nisi porro itaque at adipisci, quis impedit perspiciatis distinctio maxime fugit sequi nulla! Fugiat recusandae ab sit deserunt ut et ea eum tempora libero quo velit sunt vel cumque, architecto dicta numquam consequatur dolore, possimus aspernatur aliquid labore mollitia suscipit?</p>
+    </div>
+    </div>
+
+    <!-- deixe o cabeçalho fixo (não se move com a barra de navegação / scroll vertical . O conteúdo principal do cardápio deve estar dentro de uma div semântica main. Utilize as propriedades de css position, left, top, righth ou bottom para fazer o cabeçalho fixo, se necessário utilize o z-index. ) -->
+
+
+    <!-- Crie uma branch chamada carrossel-promocoes OU promocoes e inclua entre ao header e ao main o componente carrossel do bootstrap que mais se adeque ao que é solicitado: exibir controles laterais e indicadores (bullets) podendo ou não ser automatico. Inclua 5 imagens de forma que existam 5 bullets.  Importante utilize a classe container do bootstrap  para o carrossel  de forma que ele tenha margens laterais e seja centralizado na tela-->
+    <!-- https://placehold.co/600x400/orange/white?text="slide 1" -->
+
+    <!-- commit a inclusão do carrossel e faça o arredondamento das bordas dos indicadores:adicione um padding p-3 e a borda em forma de círculo border-circle -->
+
+
+    <div class="container position-relative " >
+        <div id="carouselExampleIndicators" class="carousel slide">
+
+            <!-- Indicadores -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide-to="0" class="active p-0 border-0 rounded-circle" style="width: 12px; height: 12px;"
+                    aria-current="true" aria-label="Slide 1" ></button>
+
+                <button type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide-to="1" aria-label="Slide 2" class="p-0 border-0 rounded-circle" style="width: 12px; height: 12px;"></button>
+
+                <button type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide-to="2" aria-label="Slide 3" class="p-0 border-0 rounded-circle" style="width: 12px; height: 12px;"></button>
+
+                <button type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide-to="3" aria-label="Slide 4" class="p-0 border-0 rounded-circle" style="width: 12px; height: 12px;"></button>
+
+                <button type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide-to="4" aria-label="Slide 5" class="p-0 border-0 rounded-circle" style="width: 12px; height: 12px;"></button>
+            </div>
+
+            <!-- Slides -->
+            <!-- rounded-4 arredonda as bordas das imagens do carrossel -->
+            <div class="carousel-inner rounded-4">
+                <div class="carousel-item active">
+                    <img src="https://placehold.co/600x400/orange/white?text=Slide+1"
+                        class="d-block w-100" alt="Slide 1">
+                    <!-- texto promocional do slide 1 -->
+                    <div class="carousel-caption bg-dark bg-opacity-50 rounded-3 p-3 mb-4">
+                        <h5 class="fw-bold">Combo do Dia</h5>
+                        <p class="text-center">Angus Burger + Fritas + Refri de R$42,50 por apenas R$34,90!</p>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="https://placehold.co/600x400/red/white?text=Slide+2"
+                        class="d-block w-100" alt="Slide 2">
+                    <!-- texto promocional do slide 2 -->
+                    <div class="carousel-caption bg-dark bg-opacity-50 rounded-3 p-3 mb-4">
+                        <h5 class="fw-bold">Novidade: Duplo Cheddar</h5>
+                        <p class="text-center">Dois hambúrgueres, muito cheddar e bacon crocante. Peça já o seu!</p>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="https://placehold.co/600x400/blue/white?text=Slide+3"
+                        class="d-block w-100" alt="Slide 3">
+                    <!-- texto promocional do slide 3 -->
+                    <div class="carousel-caption bg-dark bg-opacity-50 rounded-3 p-3 mb-4">
+                        <h5 class="fw-bold">Terça Veggie</h5>
+                        <p class="text-center">Veggie Burger com 20% de desconto toda terça-feira.</p>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="https://placehold.co/600x400/green/white?text=Slide+4"
+                        class="d-block w-100" alt="Slide 4">
+                    <!-- texto promocional do slide 4 -->
+                    <div class="carousel-caption bg-dark bg-opacity-50 rounded-3 p-3 mb-4">
+                        <h5 class="fw-bold">Milkshake em Dobro</h5>
+                        <p class="text-center">Na compra de 2 milkshakes, o segundo sai pela metade do preço.</p>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="https://placehold.co/600x400/pink/white?text=Slide+5"
+                        class="d-block w-100" alt="Slide 5">
+                    <!-- texto promocional do slide 5 -->
+                    <div class="carousel-caption bg-dark bg-opacity-50 rounded-3 p-3 mb-4">
+                        <h5 class="fw-bold">Frete Grátis</h5>
+                        <p class="text-center">Entrega grátis em pedidos acima de R$60,00.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botão anterior -->
+            <button class="carousel-control-prev" type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"
+                    aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+
+            <!-- Botão próximo -->
+            <button class="carousel-control-next" type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon"
+                    aria-hidden="true"></span>
+                <span class="visually-hidden">Próximo</span>
+            </button>
+
+        </div>
+    </div>
+
+
+    <!-- crie uma nova branch chamada carrinho : com uma nova âncora/link no menu do header faça o uso do componente offcanvas do bootstrap que abre um menu lateral a direita. Dentro do conteúdo do offcanvas adicione o título carrinho e a classe de texto centralizado e preto do bootstrap -->
+
+
+
+
+
+    <main >
+        <h1>CARDÁPIO DIGITAL</h1>
+
+    <h2 id="burguer">HAMBURGUERES</h2>
+    <!-- os cards de hambúrguer serão inseridos aqui pelo JavaScript -->
+    <div id="listaHamburgueres"></div>
+
+    <h2 id="acompanhamentos">ACOMPANHAMENTOS  </h2>
+    <!-- os cards de acompanhamento serão inseridos aqui pelo JavaScript -->
+    <div id="listaAcompanhamentos"></div>
+
+    <br>
+    <h2 id="bebidas">BEBIDAS</h2>
+    <!-- os cards de bebida serão inseridos aqui pelo JavaScript -->
+    <div id="listaBebidas"></div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+    <!-- o nosso script fica no final do body, depois dos elementos que ele vai selecionar -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
