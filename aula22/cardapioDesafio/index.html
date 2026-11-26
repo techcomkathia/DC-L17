@@ -32,8 +32,48 @@
         <h5 class="offcanvas-title" id="offcanvasRightLabel">Carrinho</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
-    <div class="offcanvas-body">
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt earum nisi porro itaque at adipisci, quis impedit perspiciatis distinctio maxime fugit sequi nulla! Fugiat recusandae ab sit deserunt ut et ea eum tempora libero quo velit sunt vel cumque, architecto dicta numquam consequatur dolore, possimus aspernatur aliquid labore mollitia suscipit?</p>
+    <!-- corpoCarrinho: texto escuro e o total sempre no final (classe no style.css) -->
+    <div class="offcanvas-body corpoCarrinho">
+
+        <!-- LISTA DE ITENS: os cards do carrinho serão criados pelo JavaScript
+             (createElement + classList.add + appendChild) e colocados aqui -->
+        <div id="itensCarrinho" class="listaCarrinho">
+
+            <!-- ===== MODELO DE CARD DO CARRINHO (exemplo – depois será criado pelo JS) ===== -->
+            <div class="itemCarrinho">
+                <!-- imagem pequena do produto -->
+                <img class="imgCarrinho" src="https://placehold.co/400x300/orange/white?text=Angus+Burger" alt="Clássico Angus Burger">
+
+                <!-- bloco do meio: nome, preço e quantidade -->
+                <div class="infoCarrinho">
+                    <h3 class="nomeCarrinho">Clássico Angus Burger</h3>
+                    <p class="precoCarrinho">R$22,50 cada</p>
+
+                    <div class="quantidadeCarrinho">
+                        <button class="btnQuantidade">-</button>
+                        <span class="numeroQuantidade">2</span>
+                        <button class="btnQuantidade">+</button>
+                    </div>
+                </div>
+
+                <!-- bloco da direita: subtotal e remover -->
+                <div class="acoesCarrinho">
+                    <strong class="subtotalCarrinho">R$45,00</strong>
+                    <button class="btnRemover">Remover</button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- TOTAL A PAGAR -->
+        <div class="boxTotal">
+            <div class="linhaTotal">
+                <span>Total a pagar</span>
+                <strong id="totalCarrinho" class="valorTotal">R$45,00</strong>
+            </div>
+            <button class="btnFinalizar">Finalizar pedido</button>
+        </div>
+
     </div>
     </div>
 

@@ -23,5 +23,8 @@ titulos[0].classList.add('vermelho')
 console.log(titulos[0].classList)
 titulos[0].classList.remove('vermelho')
 
+//ATIVIDADE 1
+
+
 //no css do arquivo do desafio crie a classe oculta ( com o display none)
 //selecione o elemento do cardápio que mostra os acompanhamentos e oculte ele da visualização bem como o link que é mostrado no menu de navegação. Dica: crie uma função chamada ocultar, que receba como parâmetro os seletores do link do menu e da seção do cardápio. 

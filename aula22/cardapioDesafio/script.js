@@ -119,7 +119,18 @@ const bebidas = [
 const listaHamburgueres = document.getElementById("listaHamburgueres");
 const listaAcompanhamentos = document.getElementById("listaAcompanhamentos");
 const listaBebidas = document.getElementById("listaBebidas");
+const linksMenu = document.querySelectorAll('a')
 
+
+function ocultarSecao(link, secao){
+  link.classList.add('oculta')
+  secao.classList.add('oculta')
+}
+
+function revelarSecao(link, secao){
+  link.classList.remove('oculta')
+  secao.classList.remove('oculta')
+}
 
 // =========================================================
 // 3. FUNÇÕES (cada uma com um único objetivo)
@@ -153,9 +164,11 @@ function montarSecao(listaProdutos, elementoSecao) {
     //limpa qualquer conteúdo anterior para só depois preencher com as informações dos produtos
   elementoSecao.innerHTML = "";
 
-  for (let i = 0; i < listaProdutos.length; i++) {
-    elementoSecao.innerHTML += criarCard(listaProdutos[i]);
-  }
+  // for (let i = 0; i < listaProdutos.length; i++) {
+  //   elementoSecao.innerHTML += criarCard(listaProdutos[i]);
+  // }
+
+  listaProdutos.forEach((item)=> elementoSecao.innerHTML+= criarCard(item))
 }
 
 // Monta as 3 seções do cardápio
@@ -180,6 +193,9 @@ function ajustarAlturaCabecalho() {
 
 montarCardapio();
 ajustarAlturaCabecalho();
+ocultarSecao(linksMenu[1],listaAcompanhamentos)
+
+revelarSecao(linksMenu[1],listaAcompanhamentos)
 
 // mede de novo quando as imagens (como o logo) terminam de carregar
 window.onload = ajustarAlturaCabecalho;
